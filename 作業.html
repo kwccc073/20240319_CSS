@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 700px;
+            /* 水平置中 */
+            margin: 25% auto 25%;
+            /* transform: translate(-50%, -50%); */
+            /* 去除幽靈空白 */
+            /* font-size: 0; */
+            /* 骰子置中 */
+            text-align: center;
+        }
+
+        .box {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: lightgray;
+            border: 1px solid black;
+            border-radius: 10%;
+            position: relative;
+            box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+            /* 陰影 */
+        }
+
+        .dot {
+            background: black;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .dot_red {
+            background: red;
+        }
+
+        .center {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .left {
+            left: 10%;
+        }
+
+        .right {
+            right: 10%;
+        }
+
+        .top {
+            top: 10%;
+        }
+
+        .bottom {
+            bottom: 10%;
+        }
+
+        .middle {
+            top: 50%;
+            transform: translate(0%, -50%)
+        }
+
+        /* 畫box
+        紅色
+        黑色
+        不同位置定位 */
+        /* 大盒子包六個盒子，再一起移動到正中央 */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">
+            <div class="dot dot_red center"></div>
+        </div>
+        <div class="box box2">
+            <div class="dot left top"></div>
+            <div class="dot right bottom"></div>
+        </div>
+        <div class="box box3">
+            <div class="dot left top"></div>
+            <div class="dot center"></div>
+            <div class="dot right bottom"></div>
+        </div>
+        <div class="box box4">
+            <div class="dot dot_red left top"></div>
+            <div class="dot dot_red right top"></div>
+            <div class="dot dot_red left bottom"></div>
+            <div class="dot dot_red right bottom"></div>
+        </div>
+        <div class="box box5">
+            <div class="dot left top"></div>
+            <div class="dot right top"></div>
+            <div class="dot center"></div>
+            <div class="dot left bottom"></div>
+            <div class="dot right bottom"></div>
+        </div>
+        <div class="box box6">
+            <div class="dot left top"></div>
+            <div class="dot right top"></div>
+            <div class="dot left middle"></div>
+            <div class="dot right middle"></div>
+            <div class="dot left bottom"></div>
+            <div class="dot right bottom"></div>
+        </div>
+    </div>
+</body>
+
+</html>

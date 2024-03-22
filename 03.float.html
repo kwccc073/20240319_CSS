@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 浮動</title>
+    <style>
+        .container {
+            width: 75%;
+            margin: 50px auto 50px;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: grey;
+        }
+
+        /* float做文繞圖*/
+        .float_left {
+            /*float會使自動轉型成block */
+            float: left;
+            margin: 1rem;
+        }
+
+        /* 清除浮動左側，表示不被浮動影響 */
+        .clear_lefr {
+            clear: left;
+        }
+
+        .float_right {
+            float: right;
+            margin: 1rem;
+        }
+
+        .clear_right {
+            clear: right;
+        }
+
+        .clear_both {
+            clear: both;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: #000;
+            color: white;
+            overflow: hidden;
+        }
+
+        .menu-item {
+            /* box-sizing: border-box
+            使 width -> 包含padding、border */
+            box-sizing: border-box;
+            float: left;
+            width: 20%;
+            text-align: center;
+            padding: 1rem;
+            border: 10px solid #333;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 圖片是inline -->
+
+    <div class="container">
+        <h2>float_left</h2>
+        <img class="float_left" src="https://picsum.photos/200/200/?random=10">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos a, numquam molestiae consequuntur fugiat optio cum aspernatur autem adipisci, eveniet dolore sed, eaque earum. Eos at beatae culpa exercitationem, quos aliquam vitae cum corporis atque maiores sapiente incidunt earum perspiciatis officiis corrupti </p>
+        <!--  清除浮動左側  -->
+        <p class="clear_left">大陸引起資料庫防止日報儀器年代我在現代資訊，就要大門完整參觀敵人發展實現似乎類別開發商手術，不願意以來天空理想一點空氣資本，訪問以下經營推廣更加強烈登記回覆，經濟辦法收購兩位女友望着她的，電視劇淡淡已有收集你沒有有了消息民族頁面傳來職務大家都，文章性能的。</p>
+    </div>
+
+    <div class="container">
+        <h2>float_right</h2>
+        <img class="float_right" src="https://picsum.photos/200/200/?random=10">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos a, numquam molestiae consequuntur fugiat optio cum aspernatur autem adipisci, eveniet dolore sed, eaque earum. Eos at beatae culpa exercitationem, quos aliquam vitae cum corporis atque maiores sapiente incidunt earum perspiciatis officiis corrupti </p>
+        <!--  清除浮動左側  -->
+        <p class="clear_right">大陸引起資料庫防止日報儀器年代我在現代資訊，就要大門完整參觀敵人發展實現似乎類別開發商手術，不願意以來天空理想一點空氣資本，訪問以下經營推廣更加強烈登記回覆，經濟辦法收購兩位女友望着她的，電視劇淡淡已有收集你沒有有了消息民族頁面傳來職務大家都，文章性能的。</p>
+    </div>
+
+    <div class="container">
+        <h2>float_left和float_right</h2>
+        <img class="float_left" src="https://picsum.photos/200/200/?random=10">
+        <img class="float_right" src="https://picsum.photos/200/200/?random=10">
+        <p class="clear_both">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste enim architecto cumque obcaecati minima debitis doloremque sapiente. Quia ea voluptatem ducimus assumenda obcaecati quibusdam dignissimos porro recusandae veniam cumque repellendus reiciendis necessitatibus minus cupiditate, corporis laboriosam culpa? Inventore beatae, officia eaque commodi voluptas ea in ipsa dolorum aspernatur dicta delectus.</p>
+    </div>
+
+    <div class="container">
+        <h2>浮動的特性</h2>
+        <ul>
+            <li>具有區塊化(block)的特性，將元素轉型成block</li>
+            <li>會脫離正常流向獨立，會影響父元素無法包覆浮動元素，
+                若父元素沒有內容或padding，就會造成父元素高度崩塌消失</li>
+            <li>父元素設定overflow: hidden 可以讓浮動元素再次被包覆</li>
+        </ul>
+    </div>
+
+    <!-- float會脫離正常流向獨立，會影響父元素無法包覆浮動元素，會造成父元素高度崩塌消失 -->
+    <!-- <div style="background: deepskyblue;">
+        <span style="float:left ;">我是span</span>
+        <button style="float:right ;">我是botton</button>
+    </div> -->
+
+    <div style="background: deepskyblue;overflow: hidden;">
+        <!-- float -->
+        <span style="float:left ;">我是span，誕生時為inline，float後變成block</span>
+        <button style="float:right ;">我是botton誕生時為inline-block，float後變成block</button>
+    </div>
+
+    <div class="container">
+        <h3>float選單</h3>
+        <!-- ul.menu>li.menu-item{item$}*5得到下面 -->
+        <ul class="menu">
+            <li class="menu-item">item1</li>
+            <li class="menu-item">item2</li>
+            <li class="menu-item">item3</li>
+            <li class="menu-item">item4</li>
+            <li class="menu-item">item5</li>
+        </ul>
+    </div>
+</body>
+
+</html>

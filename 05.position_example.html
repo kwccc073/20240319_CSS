@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 500px;
+            height: 500px;
+            background: #333;
+            /* 這個相對定位是為了產生定位點讓絕對定位子元素在裡面 
+            （讓後續區塊只能在該範圍內移動）*/
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* 定位點都是看左上角 */
+            /* 若希望子區塊的中心要在父區塊的中心，則需透過 translate(-50%, -50%)修正
+            translate(-50%, -50%)表示往左"子區塊的50%"，往上"子區塊的50%"
+                    */
+            transform: translate(-50%, -50%);
+            /* 圓形 */
+            /* border-radius: 50%; */
+        }
+
+        .child1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 100px;
+            z-index: 1;
+        }
+
+
+        .child2 {
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: absolute;
+            left: 150px;
+            top: 50px;
+            z-index: 3;
+        }
+
+
+        .child3 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            left: 200px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>z-index</h1>
+    <p style="background: lemonchiffon;">當元素進入定位層時，可以使用z-index去調整誰蓋誰，z-index數值越大在越上面
+    <div class="parent">
+        <!-- 通常越晚出現的會在越上面 -->
+        <div class="child1"></div>
+        <div class="child2"></div>
+        <div class="child3"></div>
+    </div>
+    <p style="background: lightblue;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis saepe consectetur ipsa placeat optio recusandae iusto earum. Dolorem, dolorum! Dolores, consectetur doloremque! Consectetur ipsum numquam laborum quasi sed atque quia?</p>
+</body>
+
+</html>

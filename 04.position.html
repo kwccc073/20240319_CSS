@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position定位</title>
+    <style>
+        .container {
+            width: 75%;
+            margin: auto;
+            border: 1px solid #000;
+            padding: 0 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .box1 {
+            background: pink;
+        }
+
+        .box2 {
+            background: palegreen;
+        }
+
+        .box3 {
+            background: paleturquoise;
+        }
+
+        .box4 {
+            background: blanchedalmond;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .top {
+            top: 100px;
+        }
+
+
+
+        /* .bottom {
+            bottom: 0;
+        }
+
+        .right {
+            right: 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>position: relative </h1>
+        <h2>當元素為相對定位時</h2>
+        <ul>
+            <li>使用位移屬性(top, right, bottom, left)，會以自己原來的位置做位移，保留自身原來的空間，不會被其他元素佔據</li>
+            <li>只設定position: relative，而沒有任何位移屬性，會留在原地不動，relative元素常作為absolute子元素位移目標的依據</li>
+            <li>進入定位層，可以設定z-index(z軸)</li>
+        </ul>
+        <div class="box1">
+            <h1>box1</h1>
+            <p>塑膠人大一個月一聲業主本類秘密公主作為，選項國外數字的錢更是外貿右鍵鎖定人數所有人而言看法出去到我，姐姐大約是一種好多體現前進浙江激烈調整表現女孩子組合，她的結構昨天殺手我把房間有關部門，方式新手參加有時市委上了一看女性一條找到，放下操作系統一場無線，然。</p>
+        </div>
+        <div class="box2 relative left">
+            <h1>box2</h1>
+            <p>塑膠人大一個月一聲業主本類秘密公主作為，選項國外數字的錢更是外貿右鍵鎖定人數所有人而言看法出去到我，姐姐大約是一種好多體現前進浙江激烈調整表現女孩子組合，她的結構昨天殺手我把房間有關部門，方式新手參加有時市委上了一看女性一條找到，放下操作系統一場無線，然。</p>
+        </div>
+        <div class="box3">
+            <h1>box3</h1>
+            <p>塑膠人大一個月一聲業主本類秘密公主作為，選項國外數字的錢更是外貿右鍵鎖定人數所有人而言看法出去到我，姐姐大約是一種好多體現前進浙江激烈調整表現女孩子組合，她的結構昨天殺手我把房間有關部門，方式新手參加有時市委上了一看女性一條找到，放下操作系統一場無線，然。</p>
+        </div>
+        <div class="box4">
+            <h1>box4</h1>
+            <p>塑膠人大一個月一聲業主本類秘密公主作為，選項國外數字的錢更是外貿右鍵鎖定人數所有人而言看法出去到我，姐姐大約是一種好多體現前進浙江激烈調整表現女孩子組合，她的結構昨天殺手我把房間有關部門，方式新手參加有時市委上了一看女性一條找到，放下操作系統一場無線，然。</p>
+        </div>
+    </div>
+
+    <!-- position: relative使box2在該box內-->
+    <div class="container relative">
+        <h1>position: absolute </h1>
+        <h2>當元素為絕對定位時</h2>
+        <ul>
+            <li>沒有任何位移屬性，該元素脫離正常流向，進入定位層，後方元素會流動置絕對定位的元素的下方（即被遮住）</li>
+            <li>若祖先元素找不到定位點(absolute, relative, fixed)，最後會以html根元素作為位移的目標</li>
+        </ul>
+        <div class="box1">
+            <h1>box1</h1>
+            <p>塑膠人大一個月一聲業主本類秘密公主作為，選項國外數字的錢更是外貿右鍵鎖定人數所有人而言看法出去到我，姐姐大約是一種好多體現前進浙江激烈調整表現女孩子組合，她的結構昨天殺手我把房間有關部門，方式新手參加有時市委上了一看女性一條找到，放下操作系統一場無線，然。</p>
+        </div>
+        <!-- absolute會往外找 -->
+        <div class="box2 absolute left top">
+            <h1>box2</h1>
+            <p>塑膠人大一個月一聲業主本類秘密公主作為，選項國外數字的錢更是外貿右鍵鎖定人數所有人而言看法出去到我，姐姐大約是一種好多體現前進浙江激烈調整表現女孩子組合，她的結構昨天殺手我把房間有關部門，方式新手參加有時市委上了一看女性一條找到，放下操作系統一場無線，然。</p>
+        </div>
+        <div class="box3">
+            <h1>box3</h1>
+            <p>塑膠人大一個月一聲業主本類秘密公主作為，選項國外數字的錢更是外貿右鍵鎖定人數所有人而言看法出去到我，姐姐大約是一種好多體現前進浙江激烈調整表現女孩子組合，她的結構昨天殺手我把房間有關部門，方式新手參加有時市委上了一看女性一條找到，放下操作系統一場無線，然。</p>
+        </div>
+        <div class="box4">
+            <h1>box4</h1>
+            <p>塑膠人大一個月一聲業主本類秘密公主作為，選項國外數字的錢更是外貿右鍵鎖定人數所有人而言看法出去到我，姐姐大約是一種好多體現前進浙江激烈調整表現女孩子組合，她的結構昨天殺手我把房間有關部門，方式新手參加有時市委上了一看女性一條找到，放下操作系統一場無線，然。</p>
+        </div>
+    </div>
+</body>
+
+</html>

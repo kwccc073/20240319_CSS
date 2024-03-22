@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wxercise_1024x768</title>
+    <style>
+        body {
+            font-family: "微軟正黑體";
+        }
+
+        .main {
+            width: 1024px;
+            height: 768px;
+            margin: auto;
+            /* 背景顏色可用於測試盒子範圍 */
+            background: #aaa;
+            color: white;
+            font-size: 50px;
+            text-align: center;
+
+        }
+
+        .header {
+            width: 1024px;
+            height: 100px;
+            background: black;
+            /* 垂直置中 line-heigh:該box的height*/
+            /* line-height會先扣掉文字佔的大小，再把剩下的平均分配給上、下 */
+            line-height: 100px;
+        }
+
+        .left {
+            float: left;
+            background: green;
+            width: 200px;
+            height: 568px;
+            line-height: 568px;
+        }
+
+        .right {
+            float: right;
+            background: blue;
+            width: 824px;
+            height: 568px;
+            line-height: 568px;
+        }
+
+        .footer {
+            clear: both;
+            background: red;
+            width: 1024px;
+            height: 100px;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 可寫成.main>.header+.left+.right+.footer -->
+    <div class="main">
+        <div class="header">header</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+
+</html>

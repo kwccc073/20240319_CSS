@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block and inline</title>
+    <style>
+        body {
+            margin: 0;
+            padding-bottom: 300px;
+        }
+
+        hr {
+            width: 75%;
+            margin: 50px auto;
+            padding: 10px;
+            background: grey;
+            /* 粗細設定待確認 */
+        }
+
+        /* 
+        ul.menu選擇到ul上的menu 
+        ul menu表示選擇ul後代的menu
+        有無空格差很多
+        */
+        ul.menu {
+            /* 下面三項是用於消掉ul原本的特性 */
+            margin: 0;
+            padding: 0;
+            /* 去除點點 */
+            list-style: none;
+            /* font-size: 0為了消除幽靈空白
+            消除幽靈空白後，字體需再設定回來 */
+            font-size: 0;
+            border: 5px solid #333;
+            /* 文字水平置中 */
+            text-align: center;
+        }
+
+        /* menu子代中的li */
+        .menu li {
+            background: deeppink;
+            /* 使用display設定其他類型的盒子 */
+            /* block轉成inline-block：為了流向排版（橫向） */
+            /* inline-block 排版外在行為具有inline特性，內在行為具有block特性，因此可以正常使用盒模型 */
+            display: inline-block;
+            width: 100px;
+
+        }
+
+        .menu a {
+            color: white;
+            background: black;
+            /* 將inline轉乘block，可以佔據父元素空間 */
+            display: block;
+            padding: 1rem;
+            /*font-size: 1.5rem 消除幽靈空白後，字體需再設定回來 */
+            font-size: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        /* : 表示滑鼠移到上面的時候才會有作用 */
+        .menu a:hover {
+            background: lightpink;
+            color: blue
+        }
+    </style>
+</head>
+
+<body>
+    <h1>區塊盒(block)與行內盒(inline)</h1>
+    <h3>說明以下兩行的差異?</h3>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <span>Lorem ipsum dolor sit amet.</span>
+    <hr>
+
+    <h3>設定他們的背景顏色</h3>
+    <div style="background: gold;">Lorem ipsum dolor sit amet.</div>
+    <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+    <hr>
+
+    <h2>區塊元素 (block)</h2>
+    <p>例子：div、h1~h6、p、ul、li、table...</p>
+    <!-- 有些區塊元素會有預設條件，若要修改則到style設定選擇器 -->
+    <!-- body也是區塊，超級大的區塊，有預設margin: 8px-->
+    <!-- p有預設部分條件；div為最單純的區塊元素，沒有任何預設，故通常用div來設定區塊 -->
+    <ul>
+        <li>預設情況，沒有設定寬度，會佔據父元素的空間</li>
+        <li>會前、後換行，無法與其他元素並排</li>
+        <li>可以正常使用盒模型屬性：width、height、margin、padding，其中margin對其他元素有實質的空間推移特性</li>
+        <li>不會被vertical-align（垂直對齊）影響</li>
+    </ul>
+    <div style="background: gold;">Lorem ipsum dolor sit amet.</div>
+    <div style="background: gold;">Lorem ipsum dolor sit amet.</div>
+    <div style="background: gold;width: 300px;">即使設定寬度，看起來有空間讓後方元素並排，不過依舊會佔據父元素的寬度，前後會換行</div>
+    <div style="background: gold;width: 500px;">Lorem ipsum dolor sit amet.</div>
+    <hr>
+
+    <h2>行內元素 (inline)</h2>
+    <p>例子：span, a, em, strong, label...</p>
+    <ul>
+        <li>行內盒只能擁有屬於自己的內容空間</li>
+        <li>前後不會斷行，本身內容寬度有多少，寬度就有多少</li>
+        <li>設定寬、高對行內元素都不會有作用</li>
+        <li>可以被vertical-align（垂直對齊）影響</li>
+    </ul>
+    <span style="background: deepskyblue;width: 1000px;height: 1000px;">Lorem ipsum dolor sit amet.</span>
+    <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+    <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+    <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+    <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+    <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+    <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+    <span style="background: deepskyblue;">Lorem ipsum dolor sit amet.</span>
+
+    <hr>
+
+    <h3>使用display設定其他類型的盒子，這稱為轉型，例如:display:inline-block</h3>
+    <p>使用display:inline-block製作橫向選單</p>
+    <p>inline-block 排版外在行為具有inline特性，內在行為具有block特性，因此可以正常使用盒模型</p>
+    <!-- 輸入ul.menu>li*5>a得到下面 -->
+    <ul class="menu">
+        <li><a href="#">link</a></li>
+        <li><a href="#">link</a></li>
+        <li><a href="#">link</a></li>
+        <li><a href="#">link</a></li>
+        <li><a href="#">link</a></li>
+    </ul>
+</body>
+
+</html>

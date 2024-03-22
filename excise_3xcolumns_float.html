@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>excise_float</title>
+</head>
+<!-- 960px水平置中，用float排三排 -->
+<style>
+    .container {
+        width: 960px;
+        /* 水平置中 */
+        margin: auto;
+        background: orange;
+        font-size: 0;
+        /* 處理float */
+        overflow: hidden;
+    }
+
+    .col {
+        /*float會使自動轉型成block，故不需要再用display */
+        float: left;
+        /* box-sizing: border-box; */
+        width: 270px;
+        margin: 10px;
+        padding: 10px;
+        /* background: yellow; */
+        border: 5px solid rgb(255, 0, 255);
+        font-size: 1rem;
+    }
+
+    img {
+        /* max-width圖片一定要超過父元素的寬度，才會填滿父元素 */
+        max-width: 100%;
+        /* widthu 一定會將圖片填滿父元素 */
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="col">
+            <img src="https://picsum.photos/800/600/?random=10">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas natus fugiat dicta amet expedita in, veritatis harum vero, magni eveniet est ipsam consequuntur odio aut nostrum sint praesentium enim ducimus.</p>
+        </div>
+        <div class="col">
+            <img src="https://picsum.photos/800/600/?random=10">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas natus fugiat dicta amet expedita in, veritatis harum vero, magni eveniet est ipsam consequuntur odio aut nostrum sint praesentium enim ducimus.</p>
+        </div>
+        <div class="col">
+            <img src="https://picsum.photos/800/600/?random=10">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas natus fugiat dicta amet expedita in, veritatis harum vero, magni eveniet est ipsam consequuntur odio aut nostrum sint praesentium enim ducimus.</p>
+        </div>
+    </div>
+</body>
+
+</html>
